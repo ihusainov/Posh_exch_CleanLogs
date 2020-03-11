@@ -1,9 +1,28 @@
+<#
+.SYNOPSIS 
+Delete exchange 2016 - 2019 logs from system directory
+ 
+.DESCRIPTION
+Необходимо запускать скрипт из Powershell
+ 
+.OUTPUTS 
+
+.NOTES 
+Written by:  ih
+ 
+Change Log  
+V0.2  14/09/2019 - Stable version
+
+#>
+
+
 Set-Executionpolicy RemoteSigned
-$days=0
+$days=0  # How many days keep log files
 $IISLogPath="C:\inetpub\logs\LogFiles\"
 $ExchangeLoggingPath="C:\Program Files\Microsoft\Exchange Server\V15\Logging\"
 $ETLLoggingPath="C:\Program Files\Microsoft\Exchange Server\V15\Bin\Search\Ceres\Diagnostics\ETLTraces\"
 $ETLLoggingPath2="C:\Program Files\Microsoft\Exchange Server\V15\Bin\Search\Ceres\Diagnostics\Logs"
+
 Function CleanLogfiles($TargetFolder)
 {
   write-host -debug -ForegroundColor Yellow -BackgroundColor Cyan $TargetFolder
